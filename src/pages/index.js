@@ -1,10 +1,9 @@
-import { Inter } from "next/font/google";
-
+import Login from "@/components/appComponent/authentication/Login";
 
 export default function Home() {
   return (
     <>
-    <h1 style={{fontSize:'40px'}}>VISION UI FREE</h1>
+      <Login />
     </>
   );
 }
