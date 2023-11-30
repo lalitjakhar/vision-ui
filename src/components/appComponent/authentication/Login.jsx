@@ -52,7 +52,12 @@ const Login = () => {
                 <Switch id="airplane-mode" />
                 <Label htmlFor="airplane-mode">Remember Me</Label>
               </div>
-              <Button className="w-full">SIGN IN</Button>
+              <Button className="w-full mb-5">SIGN IN</Button>
+              <div className="text-center">
+                <h2 className="text-white">
+                  Don't have an account? <span className="font-bold">Sign Up</span>
+                </h2>
+              </div>
             </div>
           </div>
         </div>
