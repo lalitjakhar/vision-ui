@@ -79,9 +79,11 @@ const Signup = () => {
                         border: "2px solid gray",
                       }}
                     >
-                      <GoogleIcon
-                        sx={{ width: "30px", height: "30px", color: "white" }}
-                      />
+                      <Link href="/layout">
+                        <GoogleIcon
+                          sx={{ width: "30px", height: "30px", color: "white" }}
+                        />
+                      </Link>
                     </div>
                   </div>
                   <p className="text-2xl font-semibold text-gray-400 mb-6">
