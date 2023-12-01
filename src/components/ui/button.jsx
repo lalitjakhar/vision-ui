@@ -38,6 +38,7 @@ const Button = React.forwardRef(({ className, variant, size, asChild = false, ..
   return (
     (<Comp
       className={cn(buttonVariants({ variant, size, className }))}
+      style={{backgroundColor:'#582cff'}}
       ref={ref}
       {...props} />)
   );
