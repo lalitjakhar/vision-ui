@@ -22,7 +22,7 @@ const Login = () => {
           </div>
         </div>
         <div className="basis-1/2" style={{ height: "100vh" }}>
-          <div className="flex justify-center items-center h-full">
+          <div className="container flex justify-center items-center h-full">
             <div className="block">
               <h2 className="text-3xl font-bold mb-2 text-white">
                 Nice to see you!
@@ -49,14 +49,34 @@ const Login = () => {
                 />
               </div>
               <div className="flex items-center space-x-2 mb-5">
-                <Switch id="airplane-mode" />
-                <Label htmlFor="airplane-mode">Remember Me</Label>
+                <Switch id="remember-me" />
+                <Label htmlFor="remember-me">Remember Me</Label>
               </div>
-              <Button className="w-full mb-5">SIGN IN</Button>
-              <div className="text-center">
+              <Button className="max-w-sm w-full mb-5">SIGN IN</Button>
+              <div className="text-center max-w-sm">
                 <h2 className="text-white">
-                  Don't have an account? <span className="font-bold">Sign Up</span>
+                  Don't have an account?{" "}
+                  <span className="font-bold">Sign Up</span>
                 </h2>
+              </div>
+            </div>
+            <div className="block">
+              <p className="text-white">
+                © 2023, Made with ❤️ by Simmmple & Simmmple for a better web
+              </p>
+              <div className="flex justify-center items-center gap-3">
+                <a className="text-white" href="">
+                  Simmmple
+                </a>
+                <a className="text-white" href="">
+                  Simmmple
+                </a>
+                <a className="text-white" href="">
+                  Blog
+                </a>
+                <a className="text-white" href="">
+                  License
+                </a>
               </div>
             </div>
           </div>
