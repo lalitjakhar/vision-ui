@@ -1,9 +1,12 @@
 import Login from "@/components/appComponent/authentication/Login";
+import React from "react";
 
-export default function Home() {
+const LoginCom = () => {
   return (
     <>
       <Login />
     </>
   );
-}
+};
+
+export default LoginCom;
