@@ -145,8 +145,8 @@ const Signup = () => {
                     <div className="flex items-center space-x-2 mb-8">
                       <Switch
                         id="rememberMe"
-                        checked={formData.rememberMe}
-                        onChange={handleInputChange}
+                        // checked={formData.rememberMe}
+                        // onChange={handleInputChange}
                       />
                       <Label htmlFor="rememberMe">Remember Me</Label>
                     </div>
