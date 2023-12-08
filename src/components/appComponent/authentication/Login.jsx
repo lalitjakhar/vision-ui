@@ -51,8 +51,8 @@ const Login = () => {
                   />
                 </div>
                 <div className="flex items-center space-x-2 mb-5">
-                  <Switch id="remember-me" defaultChecked/>
-                  <Label htmlFor="remember-me">Remember Me</Label>
+                  <Switch />
+                  <Label>Remember Me</Label>
                 </div>
                 <Button className="w-full mb-5">SIGN IN</Button>
                 <div className="text-center ">

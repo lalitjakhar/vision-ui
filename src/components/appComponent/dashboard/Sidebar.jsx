@@ -12,10 +12,9 @@ const Sidebar = () => {
     >
       <div
         className="flex flex-col lg:h-screen p-2 w-full md:w-72"
-        style={{ margin: "16px 0px 16px 16px" }}
       >
         <div className="space-y-3">
-          <div className="flex items-center dashboard_sidebar_heading">
+          <div className="flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-6 h-6 text-gray-100"
@@ -60,7 +59,7 @@ const Sidebar = () => {
               </li>
               <li className="rounded-sm">
                 <Link
-                  href="mail"
+                  href="/project"
                   className="flex items-center p-2 space-x-3 rounded-md"
                 >
                   <svg
