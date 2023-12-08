@@ -1,10 +1,11 @@
-import Layout from '@/components/appComponent/home/Layout'
+
+import Home from '@/components/appComponent/dashboard/Home'
 import React from 'react'
 
 const LayoutCom = () => {
   return (
     <>
-    <Layout />
+    <Home />
     </>
   )
 }
