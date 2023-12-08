@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Loginpage from "../../../../public/assets/loginpage.png";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
@@ -11,6 +11,25 @@ import AppleIcon from "@mui/icons-material/Apple";
 import GoogleIcon from "@mui/icons-material/Google";
 
 const Signup = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    rememberMe: false,
+  });
+
+  const handleInputChange = (e) => {
+    const { id, value, type, checked } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const handleSignUp = () => {
+    console.log("Form Data:", formData);
+  };
+
   return (
     <>
       <div className="flex flex-row">
@@ -21,13 +40,13 @@ const Signup = () => {
               INSPIRED BY THE FUTURE:
             </p>
             <p className="text-5xl font-bold tracking-wider text-white ">
-              THE VISION UI DASHBOARD
+              THE TASK PILOT DASHBOARD
             </p>
           </div>
         </div>
         <div className="basis-full md:basis-1/2" style={{ height: "100%" }}>
           <div className="container h-full pl-4 sm:pl-12 md:pl-20 lg:pl-36 pr-4 sm:pr-24 md:pr-12 lg:pr-40 xl:pr-52">
-            <div className="flex justify-between items-center  flex-col h-full py-16 md:py-36">
+            <div className="flex justify-between items-center  flex-col h-full py-16 md:py-4">
               <div className="w-full">
                 <div className="flex justify-center flex-col text-center">
                   <h2 className="text-4xl font-bold text-white">Welcome!</h2>
@@ -91,12 +110,14 @@ const Signup = () => {
                   </p>
                   <div className="text-start">
                     <div className="grid w-full gap-2 mb-8">
-                      <Label htmlFor="email">Name</Label>
+                      <Label htmlFor="name">Name</Label>
                       <Input
-                        type="name"
+                        type="text"
                         id="name"
                         placeholder="Your Name"
                         className="text-white"
+                        value={formData.name}
+                        onChange={handleInputChange}
                       />
                     </div>
                     <div className="grid w-full gap-2 mb-8">
@@ -106,6 +127,8 @@ const Signup = () => {
                         id="email"
                         placeholder="Your Email address"
                         className="text-white"
+                        value={formData.email}
+                        onChange={handleInputChange}
                       />
                     </div>
                     <div className="grid w-full items-center gap-2 mb-6">
@@ -115,13 +138,21 @@ const Signup = () => {
                         type="password"
                         id="password"
                         placeholder="Enter Your Password"
+                        value={formData.password}
+                        onChange={handleInputChange}
                       />
                     </div>
                     <div className="flex items-center space-x-2 mb-8">
-                      <Switch id="remember-me" defaultChecked />
-                      <Label htmlFor="remember-me">Remember Me</Label>
+                      <Switch
+                        id="rememberMe"
+                        checked={formData.rememberMe}
+                        onChange={handleInputChange}
+                      />
+                      <Label htmlFor="rememberMe">Remember Me</Label>
                     </div>
-                    <Button className="w-full mb-5">SIGN UP</Button>
+                    <Button className="w-full mb-5" onClick={handleSignUp}>
+                      SIGN UP
+                    </Button>
                     <div className="text-center ">
                       <h2 className="text-gray-400">
                         Already have an account?{" "}
@@ -135,7 +166,8 @@ const Signup = () => {
               </div>
               <div className="text-center text-sm">
                 <p className="text-white">
-                  © 2023, Made with ❤️ by Simmmple & Simmmple for a better web
+                  © 2023, Made with &#10084;&#65039; by Simmmple & Simmmple for
+                  a better web
                 </p>
                 <div className="flex justify-center items-center gap-3 mt-2">
                   <a className="text-white" href="">

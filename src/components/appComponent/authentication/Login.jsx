@@ -66,7 +66,7 @@ const Login = () => {
               </div>
               <div className="text-center">
                 <p className="text-white">
-                  © 2023, Made with ❤️ by Simmmple & Simmmple for a better web
+                  © 2023, Made with &#10084;&#65039; by Simmmple & Simmmple for a better web
                 </p>
                 <div className="flex justify-center items-center gap-3 mt-3">
                   <a className="text-white" href="">
