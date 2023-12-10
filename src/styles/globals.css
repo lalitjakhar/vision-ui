@@ -40,3 +40,28 @@ body {
   overflow-y: auto;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 10px;
+}
+
+.sidebar {
+  display: flex;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.searchBox {
+  margin-right: 20px;
+}
+
+.accountOptions button {
+  margin-right: 10px;
+}

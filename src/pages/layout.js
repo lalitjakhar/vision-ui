@@ -1,4 +1,5 @@
 
+import Navbar from '@/components/appComponent/dashboard/Navbar'
 import Sidebar  from '../components/appComponent/dashboard/Sidebar'
 import React from 'react'
 
@@ -10,6 +11,7 @@ const LayoutCom = ({children}) => {
           <Sidebar />
         </div>
         <div className="bg-inherit col-span-4">
+            <Navbar />
             <main>{children}</main>
         </div>
       </div>

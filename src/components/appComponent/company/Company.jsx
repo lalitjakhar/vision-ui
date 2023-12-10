@@ -10,6 +10,33 @@ import {
 } from "@/components/ui/table";
 
 const Company = () => {
+  const invoices = [
+    {
+      id: "INV001",
+      status: "Paid",
+      paymentMethod: "Debit Card",
+      amount: "$250.00",
+    },
+    {
+      id: "INV002",
+      status: "Paid",
+      paymentMethod: "Credit Card",
+      amount: "$250.00",
+    },
+    {
+      id: "INV003",
+      status: "Paid",
+      paymentMethod: "Debit Card",
+      amount: "$250.00",
+    },
+    {
+      id: "INV004",
+      status: "Paid",
+      paymentMethod: "Credit Card",
+      amount: "$250.00",
+    },
+  ];
+
   return (
     <>
       <Table>
@@ -23,39 +50,18 @@ const Company = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow>
-            <TableCell className="font-medium">INV001</TableCell>
-            <TableCell>Paid</TableCell>
-            <TableCell>Debit Card</TableCell>
-            <TableCell className="text-right">$250.00</TableCell>
-          </TableRow>
-        </TableBody>
-        <TableBody>
-          <TableRow>
-            <TableCell className="font-medium">INV002</TableCell>
-            <TableCell>Paid</TableCell>
-            <TableCell>Credit Card</TableCell>
-            <TableCell className="text-right">$250.00</TableCell>
-          </TableRow>
-        </TableBody>
-        <TableBody>
-          <TableRow>
-            <TableCell className="font-medium">INV003</TableCell>
-            <TableCell>Paid</TableCell>
-            <TableCell>Debit Card</TableCell>
-            <TableCell className="text-right">$250.00</TableCell>
-          </TableRow>
-        </TableBody>
-        <TableBody>
-          <TableRow>
-            <TableCell className="font-medium">INV001</TableCell>
-            <TableCell>Paid</TableCell>
-            <TableCell>Credit Card</TableCell>
-            <TableCell className="text-right">$250.00</TableCell>
-          </TableRow>
+          {invoices.map((invoice) => (
+            <TableRow key={invoice.id}>
+              <TableCell className="font-medium">{invoice.id}</TableCell>
+              <TableCell>{invoice.status}</TableCell>
+              <TableCell>{invoice.paymentMethod}</TableCell>
+              <TableCell className="text-right">{invoice.amount}</TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </>
   );
 };
+
 export default Company;
