@@ -1,6 +1,10 @@
 import Link from "next/link";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import { Mail } from "lucide-react";
+import { Building2 } from "lucide-react";
+import { Target } from "lucide-react";
+import { Tag } from "lucide-react";
+import { Layers3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Sidebar = () => {
@@ -17,7 +21,7 @@ const Sidebar = () => {
         <div className="space-y-3">
           <div className="flex items-center gap-2">
             <InventoryIcon className="text-white" />
-            <h2 className="text-sm font-extrabold text-white">
+            <h2 className="text-base font-extrabold text-white">
               TASK PILOT FRONTEND
             </h2>
           </div>
@@ -28,8 +32,8 @@ const Sidebar = () => {
                   href="/"
                   className="flex items-center space-x-3 rounded-md"
                 >
-                  <Button>
-                    <Mail className="mr-2 h-4 w-24"/> Company
+                  <Button style={{ width: "-webkit-fill-available" }}>
+                    <Building2 className="mr-2 h-4 w-4" /> Company
                   </Button>
                 </Link>
               </li>
@@ -38,21 +42,9 @@ const Sidebar = () => {
                   href="/project"
                   className="flex items-center space-x-3 rounded-md"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 text-gray-100"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
-                    />
-                  </svg>
-                  <span className="text-gray-100">Project</span>
+                  <Button style={{ width: "-webkit-fill-available" }}>
+                    <Layers3 className="mr-2 h-4 w-4" /> Project
+                  </Button>
                 </Link>
               </li>
               <li className="rounded-sm">
@@ -60,21 +52,9 @@ const Sidebar = () => {
                   href="/tag"
                   className="flex items-center space-x-3 rounded-md"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 text-gray-100"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                    />
-                  </svg>
-                  <span className="text-gray-100">Tag</span>
+                  <Button style={{ width: "-webkit-fill-available" }}>
+                    <Tag className="mr-2 h-4 w-4" /> Tag
+                  </Button>
                 </Link>
               </li>
               <li className="rounded-sm">
@@ -82,26 +62,9 @@ const Sidebar = () => {
                   href="/task"
                   className="flex items-center space-x-3 rounded-md"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 text-gray-100"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  <span className="text-gray-100">Task</span>
+                  <Button style={{ width: "-webkit-fill-available" }}>
+                    <Target className="mr-2 h-4 w-4" /> Task
+                  </Button>
                 </Link>
               </li>
             </ul>
