@@ -1,6 +1,5 @@
 import Link from "next/link";
 import InventoryIcon from "@mui/icons-material/Inventory";
-import { Mail } from "lucide-react";
 import { Building2 } from "lucide-react";
 import { Target } from "lucide-react";
 import { Tag } from "lucide-react";

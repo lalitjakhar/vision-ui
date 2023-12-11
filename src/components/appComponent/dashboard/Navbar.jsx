@@ -1,39 +1,49 @@
-import { useState } from "react";
-import Link from "next/link";
+import React from "react";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  InputBase,
+  IconButton,
+  Box,
+  Button,
+} from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 
 const Navbar = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
-
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
-  };
-
   return (
-    <div className="navbar">
-      <div className="sidebar">
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-      </div>
-      <div className="flex">
-        <div className="searchBox">
-          <input type="text" placeholder="Type here" />
-        </div>
-        <div className="accountOptions">
-          <div className="dropdown" onClick={toggleDropdown}>
-            <button>
-              <span>Profile</span>
-            </button>
-            {showDropdown && (
-              <div className="dropdown-content">
-                <button>Sign In</button>
-                <button>Sign Up</button>
-                <button>Dashboard</button>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
+    <AppBar position="static" className="bg-inherit shadow-none">
+      <Toolbar className="w-full">
+        <Typography
+          variant="h6"
+          sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+        >
+          My Navbar
+        </Typography>
+        <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 2 }}>
+          <Button color="inherit">Home</Button>
+          <Button color="inherit">About Us</Button>
+        </Box>
+        <Box
+          sx={{
+            position: "relative",
+            border: 1,
+            borderRadius: 1,
+            borderColor: "white",
+            ml: 2,
+            p: "2px",
+          }}
+        >
+          <IconButton sx={{ p: "5px", color: "white" }}>
+            <SearchIcon />
+          </IconButton>
+          <InputBase
+            sx={{ flex: 1, color: "white" }}
+            placeholder="Type here..."
+          />
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 };
 

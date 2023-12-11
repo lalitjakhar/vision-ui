@@ -36,32 +36,6 @@ body {
       rgb(2, 5, 21) 86.14%
     )
     center center / cover no-repeat;
-  height: 100%;
-  overflow-y: auto;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-  padding: 10px;
-}
-
-.sidebar {
-  display: flex;
-}
-
-.sidebar a {
-  color: white;
-  text-decoration: none;
-  margin-right: 20px;
-}
-
-.searchBox {
-  margin-right: 20px;
-}
-
-.accountOptions button {
-  margin-right: 10px;
+  /* height: 914px; */
+  width: 100%;
 }

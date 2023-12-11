@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { Button } from "@/components/ui/button";
+import { Button2 } from "@/components/ui/button2";
 import Link from "next/link";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import AppleIcon from "@mui/icons-material/Apple";
@@ -34,7 +34,7 @@ const Signup = () => {
     <>
       <div className="flex flex-row">
         <div className="relative hidden md:block md:basis-1/2">
-          <Image src={Loginpage} alt="" style={{ height: "100%" }} />
+          <Image src={Loginpage} alt="" style={{ height: "914px", width:"100%" }} />
           <div className="absolute top-1/2 left-12 text-center">
             <p className="text-xl tracking-wider font-medium text-white">
               INSPIRED BY THE FUTURE:
@@ -44,19 +44,19 @@ const Signup = () => {
             </p>
           </div>
         </div>
-        <div className="basis-full md:basis-1/2" style={{ height: "100%" }}>
+        <div className="basis-full md:basis-1/2" style={{ width: "100%" }}>
           <div className="container h-full pl-4 sm:pl-12 md:pl-20 lg:pl-36 pr-4 sm:pr-24 md:pr-12 lg:pr-40 xl:pr-52">
             <div className="flex justify-between items-center  flex-col h-full py-16 md:py-4">
               <div className="w-full">
                 <div className="flex justify-center flex-col text-center">
                   <h2 className="text-4xl font-bold text-white">Welcome!</h2>
-                  <p className="text-white text-base  w-full md:w-3/4 text-center">
+                  <p className="text-white text-base text-center">
                     Use these awesome forms to login or create new account in
                     your project for free.
                   </p>
                 </div>
                 <div
-                  className="text-center my-7 p-8"
+                  className="text-center my-7 p-5"
                   style={{ backgroundColor: "#131538", borderRadius: "20px" }}
                 >
                   <h4 className="text-2xl font-bold text-gray-400">
@@ -150,9 +150,9 @@ const Signup = () => {
                       />
                       <Label htmlFor="rememberMe">Remember Me</Label>
                     </div>
-                    <Button className="w-full mb-5" onClick={handleSignUp}>
+                    <Button2 className="w-full mb-5" onClick={handleSignUp}>
                       SIGN UP
-                    </Button>
+                    </Button2>
                     <div className="text-center ">
                       <h2 className="text-gray-400">
                         Already have an account?{" "}

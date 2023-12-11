@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { Button } from "@/components/ui/button";
+import { Button2 } from "@/components/ui/button2";
 import Link from "next/link";
 
 const Login = () => {
@@ -54,7 +54,7 @@ const Login = () => {
                   <Switch />
                   <Label>Remember Me</Label>
                 </div>
-                <Button className="w-full mb-5">SIGN IN</Button>
+                <Button2 className="w-full mb-5">SIGN IN</Button2>
                 <div className="text-center ">
                   <h2 className="text-white">
                     Don't have an account?{" "}
