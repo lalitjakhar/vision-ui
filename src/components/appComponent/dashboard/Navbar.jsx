@@ -8,6 +8,7 @@ import {
   Box,
   MenuItem,
   Menu,
+  Divider,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ReorderSharpIcon from "@mui/icons-material/ReorderSharp";
@@ -53,14 +54,11 @@ const Navbar = () => {
             placeholder="Type here..."
           />
         </Box>
-        <IconButton
-          sx={{ ml: 2, color: "white" }}
-          onClick={handleOpenUserMenu}
-        >
+        <IconButton sx={{ ml: 2, color: "white" }} onClick={handleOpenUserMenu}>
           <AccountCircleIcon />
         </IconButton>
         <Menu
-          sx={{ mt: "50px", width:"600px" }}
+          sx={{ mt: "50px", width: "600px" }}
           id="menu-appbar"
           anchorEl={anchorElUser}
           anchorOrigin={{
@@ -75,17 +73,18 @@ const Navbar = () => {
           open={Boolean(anchorElUser)}
           onClose={handleCloseUserMenu}
         >
-          <Typography>dgsdsdsgfdfs</Typography>
+          <Typography className="flex justify-center">Task Pilot</Typography>
+          <Divider />
           <MenuItem onClick={handleCloseUserMenu}>
-            <LockOpenIcon sx={{ mr: 2 }} />
+            <LockOpenIcon sx={{ mr: 1 }} />
             Sign In
           </MenuItem>
           <MenuItem onClick={handleCloseUserMenu}>
-            <PersonAddIcon sx={{ mr: 2 }} />
+            <PersonAddIcon sx={{ mr: 1 }} />
             Sign Up
           </MenuItem>
           <MenuItem onClick={handleCloseUserMenu}>
-            <AccountCircleIcon sx={{ mr: 2 }} />
+            <AccountCircleIcon sx={{ mr: 1 }} />
             Profile
           </MenuItem>
         </Menu>
