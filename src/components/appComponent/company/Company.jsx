@@ -8,7 +8,6 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { ArrowUpDown, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
@@ -27,8 +26,25 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Typography } from "@mui/material";
+import { Tooltip, Typography } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Button2 } from "@/components/ui/button2";
+import { Button } from "@/components/ui/button";
+
+// const handleEdit =()=>{
+//   event.preventDefault();
+//   set
+// }
 
 const data = [
   {
@@ -141,8 +157,46 @@ export const columns = [
 
       return (
         <div className="flex gap-4">
-          <CreateIcon />
-          <VisibilityIcon />
+          <Tooltip title="Edit">
+            <Dialog>
+              <DialogTrigger asChild>
+                <CreateIcon />
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[350px]">
+                <DialogHeader>
+                  <DialogTitle>Edit profile</DialogTitle>
+                  <DialogDescription>
+                    Make changes to your profile here. Click save when you're
+                    done.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="grid gap-4 py-4">
+                  <div className="grid items-center gap-2">
+                    <Typography>Name</Typography>
+                    <Input
+                      id="Name"
+                      defaultValue={row?.original?.Name}
+                      className="col-span-3"
+                    />
+                  </div>
+                  <div className="grid items-center gap-2">
+                    <Typography>Description</Typography>
+                    <Input
+                      id="username"
+                      defaultValue={row?.original?.description}
+                      className="col-span-3"
+                    />
+                  </div>
+                </div>
+                <DialogFooter>
+                  <Button2 type="submit">Save changes</Button2>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+          </Tooltip>
+          <Tooltip title="Veiw">
+            <VisibilityIcon />
+          </Tooltip>
         </div>
       );
     },

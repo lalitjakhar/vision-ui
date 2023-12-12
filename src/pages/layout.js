@@ -6,7 +6,7 @@ const LayoutCom = ({ children }) => {
   return (
     <>
       <div className="grid lg:grid-cols-5 gap-10 m-6">
-        <div className="bg-inherit hidden lg:flex">
+        <div className="bg-inherit hidden lg:block " >
           <Sidebar />
         </div>
         <div className="bg-inherit col-span-4">

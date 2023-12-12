@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <AppBar position="static" className="bg-inherit shadow-none ">
       <Toolbar className="w-full p-0">
-        <ReorderSharpIcon sx={{ display: { xs: "flex", lg: "none" } }} />
+        <ReorderSharpIcon className="flex lg:hidden"/>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           My Navbar
         </Typography>
