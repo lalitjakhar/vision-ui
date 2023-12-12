@@ -15,6 +15,7 @@ import ReorderSharpIcon from "@mui/icons-material/ReorderSharp";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import { Input } from "@/components/ui/input";
 
 const Navbar = () => {
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -37,23 +38,7 @@ const Navbar = () => {
         >
           My Navbar
         </Typography>
-        <Box
-          sx={{
-            position: "relative",
-            border: 1,
-            borderRadius: 1,
-            borderColor: "white",
-            p: "2px",
-          }}
-        >
-          <IconButton sx={{ p: "5px", color: "white" }}>
-            <SearchIcon />
-          </IconButton>
-          <InputBase
-            sx={{ flex: 1, color: "white" }}
-            placeholder="Type here..."
-          />
-        </Box>
+        <Input className="w-56" placeholder="Type here..." />
         <IconButton sx={{ ml: 2, color: "white" }} onClick={handleOpenUserMenu}>
           <AccountCircleIcon />
         </IconButton>
