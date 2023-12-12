@@ -33,20 +33,17 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar } from "@mui/material";
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
 const Navbar = () => {
   return (
-    <AppBar position="static" className="bg-inherit shadow-none">
+    <AppBar position="static" className="bg-inherit shadow-none ">
       <Toolbar className="w-full p-0">
         <ReorderSharpIcon sx={{ display: { xs: "flex", lg: "none" } }} />
-        <Typography
-          variant="h6"
-          sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-        >
+        <Typography variant="h6" sx={{ flexGrow: 1 }}>
           My Navbar
         </Typography>
-        <Input className="w-56" placeholder="Type here..." />
+        <Input className="w-60 mr-4" placeholder="Type here..." />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Avatar className="bg-lime-600">

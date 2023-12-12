@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import {
   flexRender,
@@ -9,24 +7,21 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
-
+import { ArrowUpDown, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
+import CreateIcon from "@mui/icons-material/Create";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -38,33 +33,39 @@ import Avatar from "@mui/material/Avatar";
 const data = [
   {
     id: "m5gr84i9",
-    description: 316,
-    Name: "success",
-    email: "ken99@yahoo.com",
+    description: "Org Manager",
+    Name: "John",
+    email: "John99@yahoo.com",
   },
   {
     id: "3u1reuv4",
-    description: 242,
-    Name: "success",
-    email: "Abe45@gmail.com",
+    description: "Developer",
+    Name: "Deox",
+    email: "Deox45@gmail.com",
   },
   {
     id: "derv1ws0",
-    description: 837,
-    Name: "processing",
-    email: "Monserrat44@gmail.com",
+    description: "Project Manager",
+    Name: "Maskk",
+    email: "Maskk44@gmail.com",
   },
   {
     id: "5kma53ae",
-    description: 874,
-    Name: "success",
-    email: "Silas22@gmail.com",
+    description: "UI/UX designer",
+    Name: "Proff",
+    email: "proff@gmail.com",
   },
   {
     id: "bhqecj4p",
-    description: 721,
-    Name: "failed",
-    email: "carmella@hotmail.com",
+    description: "Developer",
+    Name: "Oopss",
+    email: "opss@hotmail.com",
+  },
+  {
+    id: "3u1reuv4",
+    description: "Developer",
+    Name: "Deox",
+    email: "Deox45@gmail.com",
   },
 ];
 
@@ -125,44 +126,24 @@ export const columns = [
   },
   {
     accessorKey: "description",
-    header: () => <div className="text-right">description</div>,
-    cell: ({ row }) => {
-      const description = parseFloat(row.getValue("description"));
-
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(description);
-
-      return <div className="text-right font-medium">{formatted}</div>;
-    },
+    header: () => <div className="text-start">Description</div>,
+    cell: ({ row }) => (
+      <div className="text-start font-medium">
+        {row.getValue("description")}
+      </div>
+    ),
   },
   {
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
-      const payment = row.original;
+      const actions = row.original;
 
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
-              Copy payment ID
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <div className="flex gap-4">
+          <CreateIcon />
+          <VisibilityIcon />
+        </div>
       );
     },
   },
@@ -222,20 +203,16 @@ export default function Company() {
             {table
               .getAllColumns()
               .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                );
-              })}
+              .map((column) => (
+                <DropdownMenuCheckboxItem
+                  key={column.id}
+                  className="capitalize"
+                  checked={column.getIsVisible()}
+                  onCheckedChange={(value) => column.toggleVisibility(!!value)}
+                >
+                  {column.id}
+                </DropdownMenuCheckboxItem>
+              ))}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
@@ -244,20 +221,18 @@ export default function Company() {
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
-                  return (
-                    <TableHead key={header.id}>
-                      {header.isPlaceholder
-                        ? null
-                        : header.column.accessorKey === "avatar"
-                        ? header.column.header
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                    </TableHead>
-                  );
-                })}
+                {headerGroup.headers.map((header) => (
+                  <TableHead key={header.id}>
+                    {header.isPlaceholder
+                      ? null
+                      : header.column.accessorKey === "avatar"
+                      ? header.column.header
+                      : flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
+                  </TableHead>
+                ))}
               </TableRow>
             ))}
           </TableHeader>

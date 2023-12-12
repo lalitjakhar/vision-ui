@@ -9,14 +9,14 @@ import { Button } from "@/components/ui/button";
 const Sidebar = () => {
   return (
     <div
-      className="flex-row lg:flex"
+      className="flex-row"
       style={{
         borderRadius: "16px",
         background:
           "linear-gradient(111.84deg, rgba(6, 11, 38, 0.94) 59.3%, rgba(26, 31, 55, 0) 100%)",
       }}
     >
-      <div className="flex flex-col lg:h-screen p-5 w-full md:w-72">
+      <div className="flex flex-col lg:h-screen p-5">
         <div className="space-y-3">
           <div className="flex items-center gap-2">
             <InventoryIcon className="text-white" />
