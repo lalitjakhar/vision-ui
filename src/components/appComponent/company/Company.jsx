@@ -33,6 +33,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Typography } from "@mui/material";
+import Avatar from "@mui/material/Avatar";
 
 const data = [
   {
@@ -91,11 +92,21 @@ export const columns = [
     enableHiding: false,
   },
   {
+    accessorKey: "avatar",
+    header: "Avatar",
+    cell: ({ row }) => (
+      <Avatar
+        alt={row.getValue("Name")}
+        src={`url_to_avatar/${row.original.id}.jpg`}
+      />
+    ),
+    enableSorting: false,
+    enableHiding: false,
+  },
+  {
     accessorKey: "Name",
     header: "Name",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("Name")}</div>
-    ),
+    cell: ({ row }) => <div className="capitalize">{row.getValue("Name")}</div>,
   },
   {
     accessorKey: "email",
@@ -117,7 +128,7 @@ export const columns = [
     header: () => <div className="text-right">description</div>,
     cell: ({ row }) => {
       const description = parseFloat(row.getValue("description"));
-      
+
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
@@ -157,7 +168,7 @@ export const columns = [
   },
 ];
 
-export default function DataTableDemo() {
+export default function Company() {
   const [sorting, setSorting] = React.useState([]);
   const [columnFilters, setColumnFilters] = React.useState([]);
   const [columnVisibility, setColumnVisibility] = React.useState({});
@@ -238,6 +249,8 @@ export default function DataTableDemo() {
                     <TableHead key={header.id}>
                       {header.isPlaceholder
                         ? null
+                        : header.column.accessorKey === "avatar"
+                        ? header.column.header
                         : flexRender(
                             header.column.columnDef.header,
                             header.getContext()
@@ -257,10 +270,15 @@ export default function DataTableDemo() {
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
+                      {cell.column.accessorKey === "avatar"
+                        ? flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )
+                        : flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )}
                     </TableCell>
                   ))}
                 </TableRow>
