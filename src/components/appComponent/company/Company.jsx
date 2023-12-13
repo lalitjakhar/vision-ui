@@ -72,17 +72,24 @@ const data = [
   },
   {
     id: "5",
-    description: "Developer",
+    description: "Office Management",
     name: "Oopss",
     email: "opss@hotmail.com",
     URL: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=1889&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "6",
-    description: "Developer",
+    description: "Team Manager",
     name: "Deox",
     email: "Deox45@gmail.com",
     URL: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww",
+  },
+  {
+    id: "7",
+    description: "Project Manager",
+    name: "Alivax",
+    email: "Alivax45@gmail.com",
+    URL: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=1727&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -149,9 +156,9 @@ export const columns = [
     ),
   },
   {
-    id: "actions",
+    id: "edit",
     enableHiding: false,
-    header: "Actions",
+    header: "Edit",
     cell: ({ row }) => {
       const actions = row.original;
 
@@ -159,8 +166,8 @@ export const columns = [
         <div className="flex gap-4">
           <Dialog>
             <DialogTrigger asChild>
-              <Tooltip title="Edit" placement="left">
-                <CreateIcon />
+              <Tooltip title="Edit" placement="right">
+                <CreateIcon className="text-green-500" />
               </Tooltip>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[350px]">
@@ -200,9 +207,62 @@ export const columns = [
               </DialogFooter>
             </DialogContent>
           </Dialog>
-          <Tooltip title="Veiw" placement="right">
-            <VisibilityIcon />
-          </Tooltip>
+        </div>
+      );
+    },
+  },
+  {
+    id: "veiw",
+    enableHiding: false,
+    header: "Veiw",
+    cell: ({ row }) => {
+      const actions = row.original;
+
+      return (
+        <div className="flex gap-4">
+          <Dialog>
+            <DialogTrigger asChild>
+              <Tooltip title="Veiw" placement="right">
+                <VisibilityIcon className="text-yellow-500" />
+              </Tooltip>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[350px]">
+              <DialogHeader>
+                <DialogTitle>Veiw profile</DialogTitle>
+              </DialogHeader>
+              <div className="grid gap-4 py-4">
+                <div className="grid items-center gap-2">
+                  <Typography>Name</Typography>
+                  <Input
+                    id="name"
+                    defaultValue={row?.original?.name}
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid items-center gap-2">
+                  <Typography>Description</Typography>
+                  <Input
+                    id="username"
+                    defaultValue={row?.original?.description}
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid items-center gap-2">
+                  <Typography>Email</Typography>
+                  <Input
+                    id="email"
+                    defaultValue={row?.original?.email}
+                    className="col-span-3"
+                  />
+                </div>
+              </div>
+              <DialogFooter>
+                <ButtonMui fullWidth variant="contained" type="submit">
+                  Save changes
+                </ButtonMui>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
         </div>
       );
     },
