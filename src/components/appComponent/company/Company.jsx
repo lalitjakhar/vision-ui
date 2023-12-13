@@ -38,45 +38,51 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Button2 } from "@/components/ui/button2";
+import ButtonMui from "@mui/material/Button";
 import { Button } from "@/components/ui/button";
 
 const data = [
   {
     id: "1",
     description: "Org Manager",
-    name: "John",
-    email: "John99@yahoo.com",
+    name: "Olivia",
+    email: "Olivia99@yahoo.com",
+    URL: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "2",
     description: "Developer",
     name: "Deox",
     email: "Deox45@gmail.com",
+    URL: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "3",
     description: "Project Manager",
     name: "Maskk",
     email: "Maskk44@gmail.com",
+    URL: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "4",
     description: "UI/UX designer",
     name: "Proff",
     email: "proff@gmail.com",
+    URL: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "5",
     description: "Developer",
     name: "Oopss",
     email: "opss@hotmail.com",
+    URL: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=1889&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "6",
     description: "Developer",
     name: "Deox",
     email: "Deox45@gmail.com",
+    URL: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww",
   },
 ];
 
@@ -107,14 +113,12 @@ export const columns = [
     accessorKey: "avatar",
     header: "Avatar",
     cell: ({ row }) => (
-      <Avatar
-        alt={row.getValue("name")}
-        src={`url_to_avatar/${row.original.id}.jpg`}
-      />
+      <Avatar alt={row.getValue("name")} src={row.original.URL} />
     ),
     enableSorting: false,
     enableHiding: false,
   },
+
   {
     accessorKey: "name",
     header: "name",
@@ -153,44 +157,50 @@ export const columns = [
 
       return (
         <div className="flex gap-4">
-          <Tooltip title="Edit">
-            <Dialog>
-              <DialogTrigger asChild>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Tooltip title="Edit" placement="left">
                 <CreateIcon />
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-[350px]">
-                <DialogHeader>
-                  <DialogTitle>Edit profile</DialogTitle>
-                  <DialogDescription>
-                    Make changes to your profile here. Click save when you're
-                    done.
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="grid gap-4 py-4">
-                  <div className="grid items-center gap-2">
-                    <Typography>name</Typography>
-                    <Input
-                      id="name"
-                      defaultValue={row?.original?.name}
-                      className="col-span-3"
-                    />
-                  </div>
-                  <div className="grid items-center gap-2">
-                    <Typography>Description</Typography>
-                    <Input
-                      id="username"
-                      defaultValue={row?.original?.description}
-                      className="col-span-3"
-                    />
-                  </div>
+              </Tooltip>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[350px]">
+              <DialogHeader>
+                <DialogTitle>Edit profile</DialogTitle>
+              </DialogHeader>
+              <div className="grid gap-4 py-4">
+                <div className="grid items-center gap-2">
+                  <Typography>Name</Typography>
+                  <Input
+                    id="name"
+                    defaultValue={row?.original?.name}
+                    className="col-span-3"
+                  />
                 </div>
-                <DialogFooter>
-                  <Button2 type="submit">Save changes</Button2>
-                </DialogFooter>
-              </DialogContent>
-            </Dialog>
-          </Tooltip>
-          <Tooltip title="Veiw">
+                <div className="grid items-center gap-2">
+                  <Typography>Description</Typography>
+                  <Input
+                    id="username"
+                    defaultValue={row?.original?.description}
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid items-center gap-2">
+                  <Typography>Email</Typography>
+                  <Input
+                    id="email"
+                    defaultValue={row?.original?.email}
+                    className="col-span-3"
+                  />
+                </div>
+              </div>
+              <DialogFooter>
+                <ButtonMui fullWidth variant="contained" type="submit">
+                  Save changes
+                </ButtonMui>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+          <Tooltip title="Veiw" placement="right">
             <VisibilityIcon />
           </Tooltip>
         </div>
