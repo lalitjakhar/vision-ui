@@ -41,46 +41,41 @@ import {
 import { Button2 } from "@/components/ui/button2";
 import { Button } from "@/components/ui/button";
 
-// const handleEdit =()=>{
-//   event.preventDefault();
-//   set
-// }
-
 const data = [
   {
-    id: "m5gr84i9",
+    id: "1",
     description: "Org Manager",
-    Name: "John",
+    name: "John",
     email: "John99@yahoo.com",
   },
   {
-    id: "3u1reuv4",
+    id: "2",
     description: "Developer",
-    Name: "Deox",
+    name: "Deox",
     email: "Deox45@gmail.com",
   },
   {
-    id: "derv1ws0",
+    id: "3",
     description: "Project Manager",
-    Name: "Maskk",
+    name: "Maskk",
     email: "Maskk44@gmail.com",
   },
   {
-    id: "5kma53ae",
+    id: "4",
     description: "UI/UX designer",
-    Name: "Proff",
+    name: "Proff",
     email: "proff@gmail.com",
   },
   {
-    id: "bhqecj4p",
+    id: "5",
     description: "Developer",
-    Name: "Oopss",
+    name: "Oopss",
     email: "opss@hotmail.com",
   },
   {
-    id: "3u1reuv4",
+    id: "6",
     description: "Developer",
-    Name: "Deox",
+    name: "Deox",
     email: "Deox45@gmail.com",
   },
 ];
@@ -113,7 +108,7 @@ export const columns = [
     header: "Avatar",
     cell: ({ row }) => (
       <Avatar
-        alt={row.getValue("Name")}
+        alt={row.getValue("name")}
         src={`url_to_avatar/${row.original.id}.jpg`}
       />
     ),
@@ -121,9 +116,9 @@ export const columns = [
     enableHiding: false,
   },
   {
-    accessorKey: "Name",
-    header: "Name",
-    cell: ({ row }) => <div className="capitalize">{row.getValue("Name")}</div>,
+    accessorKey: "name",
+    header: "name",
+    cell: ({ row }) => <div className="capitalize">{row.getValue("name")}</div>,
   },
   {
     accessorKey: "email",
@@ -152,6 +147,7 @@ export const columns = [
   {
     id: "actions",
     enableHiding: false,
+    header: "Actions",
     cell: ({ row }) => {
       const actions = row.original;
 
@@ -172,10 +168,10 @@ export const columns = [
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
                   <div className="grid items-center gap-2">
-                    <Typography>Name</Typography>
+                    <Typography>name</Typography>
                     <Input
-                      id="Name"
-                      defaultValue={row?.original?.Name}
+                      id="name"
+                      defaultValue={row?.original?.name}
                       className="col-span-3"
                     />
                   </div>
