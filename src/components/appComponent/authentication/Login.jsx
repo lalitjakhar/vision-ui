@@ -57,7 +57,7 @@ const Login = () => {
                 <Button2 className="w-full mb-5">SIGN IN</Button2>
                 <div className="text-center ">
                   <h2 className="text-white">
-                    Don't have an account?{" "}
+                    Don&apos;t have an account?{" "}
                     <Link className="font-bold" href="/signup">
                       Sign Up
                     </Link>
